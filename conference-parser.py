@@ -7,7 +7,7 @@ write_dir = 'data/conferences/txt/'
 files = glob.glob(read_dir)
 
 for f in files:
-	file_name = f.split('/')[-1]
+	file_name = f.split('/')[-1].split('.')[0]
 	html = open(f, 'r').read()
 	soup = bs(html)
 	links = [pl['href'] for pl in soup.select('td.print a')]
